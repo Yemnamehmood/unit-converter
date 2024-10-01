@@ -1,27 +1,142 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Body and background */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0d2841; /* Light blue theme */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+.converter-container {
+  background-color: #ffffff96;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #131a3a; /* Blue heading */
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+input, select {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.convert-button {
+  padding: 10px 20px;
+  background-color: #040d18;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.convert-button:hover {
+  background-color: #357ABD;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #220a0a;
+}
+
+/* Box Effect */
+.converter-container {
+  border: 2px solid #020911;
+  transition: transform 0.3s;
+}
+
+.converter-container:hover {
+  transform: scale(1.05);
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .converter-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  input, select {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .convert-button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .result {
+    font-size: 1.1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@media (max-width: 480px) {
+  .converter-container {
+    width: 95%;
+    padding: 15px;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  input, select {
+    font-size: 0.85rem;
+    padding: 7px;
+  }
+
+  .convert-button {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .result {
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 0.75rem;
   }
 }
